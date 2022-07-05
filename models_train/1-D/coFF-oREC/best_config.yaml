@@ -1,0 +1,18 @@
+---
+project : coFF-oREC-project-1-D
+program : train_model.py
+parameters : 
+  batch_size: 1024
+  bidirectional: False
+  dense_multiple: 16
+  dropout_rate: 0.1
+  epochs: 20000
+  learning_rate: 0.0001
+  lstm_dropout_rate: 0
+  lstm_units: 4
+  min_delta: 0
+  optimizer: adam
+  patience: 100
+  reg: l2
+  reg_coeff: 0.000001 
+  soc_activation_out: sigmoid

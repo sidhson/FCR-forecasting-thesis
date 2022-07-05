@@ -1,0 +1,102 @@
+--- 
+project : XGB-project-1-D
+program : XGB_train.py
+method : random
+parameters : 
+########################## reg configs
+  reg_only_day : 
+    values : 
+      - True
+      - False
+  reg_n_estimators : 
+    values : 
+      - 100
+      - 200
+      - 400
+      - 600
+  reg_colsample_bytree : 
+    values : 
+      - 0.5  
+      - 0.75 
+      - 1
+  reg_subsample : 
+    values : 
+      - 0.5
+      - 0.75
+      - 1 
+  reg_max_depth : 
+    values : 
+      - 4
+      - 6
+      - 8
+  reg_learning_rate : 
+    values:
+      - 0.1
+      - 0.2
+      - 0.3
+      - 0.4
+  reg_booster : 
+    value : dart
+  reg_rate_drop :
+    values : 
+      - 0.1
+      - 0.2
+      - 0.3
+  reg_gamma : 
+    values :
+      - 0
+      - 0.0001
+      - 0.001
+  reg_recursive : 
+    value : False
+  reg_tree_method : 
+    value : gpu_hist
+    
+########################################## binary configs
+  bin_only_day : 
+    values : 
+      - True
+      - False
+  bin_n_estimators : 
+    values : 
+      - 100
+      - 200
+      - 400
+      - 600
+  bin_colsample_bytree : 
+    values : 
+      - 0.5  
+      - 0.75 
+      - 1
+  bin_subsample : 
+    values : 
+      - 0.5
+      - 0.75
+      - 1 
+  bin_max_depth : 
+    values : 
+      - 4
+      - 6
+      - 8
+  bin_learning_rate : 
+    values:
+      - 0.1
+      - 0.2
+      - 0.3
+      - 0.4
+  bin_booster : 
+    value : dart
+  bin_rate_drop :
+    values : 
+      - 0.1
+      - 0.2
+      - 0.3
+  bin_gamma : 
+    values :
+      - 0
+      - 0.0001
+      - 0.001
+  bin_recursive : 
+    value : False
+  bin_tree_method : 
+    value : gpu_hist

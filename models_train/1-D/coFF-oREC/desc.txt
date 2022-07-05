@@ -1,0 +1,15 @@
+
+
+
+MODEL
+
+coFF-oREC
+(previously RITA)
+
+LSTM, both week and day, bidirectional and not, extra hidden lstm and not. 
+Followed by a dense layer, multiple of 49, then reshaped to output consisting in 
+separate lstm layers for the two outputs. 
+
+
+RESULTS:
+Final version of LSTM model! (one of two)

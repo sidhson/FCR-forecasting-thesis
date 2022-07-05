@@ -1,0 +1,22 @@
+
+Description: 
+
+coFF-oFF 
+(previously PETRA)
+
+Sinlge layer LSTM architecture with 
+* shared FC layer 
+* FC output per target
+
+
+All features.
+Both past 24 hours and week lookback.
+
+FCR 2-D data. Same setup as for the 1-D market. 
+
+
+
+RESULT: 
+
+Final version of LSTM model! (one of two)
+

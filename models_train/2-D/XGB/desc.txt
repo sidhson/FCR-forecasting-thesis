@@ -1,0 +1,11 @@
+
+
+
+MODEL:
+XGB
+
+2-D market. Same setup as for the 1-D market. 
+
+
+RESULTS:
+Best perfroming model. 
