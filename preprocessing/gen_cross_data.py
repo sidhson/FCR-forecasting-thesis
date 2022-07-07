@@ -58,43 +58,6 @@ def get_X_columns(features = FEATURES, L = alt_lags):
     return feature_columns
 
 
-def td_1d_pred(df, features = FEATURES, H = HORIZON, L = alt_lags, D = DARK_PATCH):
-    '''
-    Pretty sure this one is depreciated. 
-
-    Prediction data in production. Only generates a single dataset. 
-    Creates dummies, differences odometer and encodes time. 
-
-    Generates cross-sectional structure observations from a single EV time series.
-    The sliding window applied omitts all observations with a single NaN value and allows overlapping observations.
-    The input data is the past 24 hours and the forecasted day one week prior. 
-    '''
-    df = create_dummies(df)
-    df = diff_odometer(df)
-    df = encode_time(df) 
-
-    targets = ['soc','is_home'] 
-    lag_features = [f for f in features if f not in dont_lag]
-    feature_columns = features.copy()
-    target_columns = []
-    data = df.copy()
-    for lag in L: # L is list in this setting
-        for f in lag_features:
-            name = f'{f}-{lag}'
-            data[name] = data[f].shift(lag)
-            feature_columns.append(name)
-    for t in targets:
-        for shift in range(D,D+H+1):
-            name = f'{t}+{shift}'
-            data[name] = data[t].shift(-shift)
-            target_columns.append(name)
-    data = data.dropna()
-    
-    X = np.array(data[feature_columns])
-    Y = np.array(data[target_columns])
-
-    return X, Y
-
 def gen_cross_X(df, features = FEATURES, H = HORIZON, L = alt_lags, D = DARK_PATCH,df_timedate = None):
     '''
     Use this function to generate prediction data for use case. 
